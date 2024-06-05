@@ -30,7 +30,8 @@
 // ここより下に解答を記載する。
 #include <stdio.h>
 
-int main(){
+int main()
+{
     for(int i=0;i<10;i++){
         printf("これはC言語の例文です。\n");
     }
