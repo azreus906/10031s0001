@@ -32,7 +32,7 @@ int main() {
     int num1 = 0b1000;
     int num2 = 0x1000;
     float num3 = 0.56;
-    double num4 = 7.8*10e9; //floatだと 77999996928.000000 になる
+    float num4 = 7.8e9;
 
     printf("%d\n", num1);
     printf("%d\n", num2);
