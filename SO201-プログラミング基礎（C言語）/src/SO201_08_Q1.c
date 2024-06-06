@@ -22,3 +22,20 @@
 
 
 // ここより下に解答を記載する。
+
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    fp = fopen("SO201_08_Q1_input.txt", "r");
+    char buffer[256];
+
+    while(1) {
+        fgets(buffer, 256, fp);
+        if (feof(fp)) {
+            break;
+        }
+        printf("%s", buffer);
+    }
+    fclose(fp);
+}

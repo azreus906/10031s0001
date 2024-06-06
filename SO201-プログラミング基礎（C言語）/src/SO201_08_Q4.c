@@ -20,3 +20,12 @@
 
 
 // ここより下に解答を記載する。
+
+#include <stdio.h>
+
+int main() {
+    char buffer[256];
+
+    fgets(buffer, 255, stdin);
+    fputs(buffer, stdout);
+}

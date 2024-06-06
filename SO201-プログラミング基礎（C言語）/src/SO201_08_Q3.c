@@ -23,3 +23,12 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    fp = fopen("SO201_08_Q3_output.txt", "a");
+
+    fputs("おはようございます。", fp);
+    fclose(fp);
+}
