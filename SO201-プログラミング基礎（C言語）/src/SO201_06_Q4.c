@@ -20,3 +20,10 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float num = -2.4;
+    printf("%f\n", fabs(num));
+}
