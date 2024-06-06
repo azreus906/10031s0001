@@ -25,5 +25,5 @@
 
 int main() {
     double num = 21;
-    printf("%.3f\n", sqrt(num));
+    printf("%.3f\n", pow(num,0.5));
 }
