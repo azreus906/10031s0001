@@ -24,6 +24,6 @@
 #include <math.h>
 
 int main() {
-    int num = 21;
+    double num = 21;
     printf("%.3f\n", sqrt(num));
 }
