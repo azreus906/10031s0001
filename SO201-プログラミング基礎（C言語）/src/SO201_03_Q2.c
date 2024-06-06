@@ -20,3 +20,9 @@ He said "Hello World!!".
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+int main() {
+    char s[] = "He said \"Hello World!!\"";
+    printf("%s", s);
+}
