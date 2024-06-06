@@ -26,3 +26,13 @@ a = 6、b = 7のとき、以下の演算結果を表示してください。
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+int main() {
+    int a = 6;
+    int b = 7;
+    printf("%d\n", a&b);
+    printf("%d\n", a^b);
+    printf("%d\n", ~a);
+    printf("%d\n", a<<3);
+}
