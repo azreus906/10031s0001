@@ -24,3 +24,12 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+int main() {
+    int num = 15;
+    while (num < 20) {
+        printf("%d\n", num);
+        num += 1;
+    }
+}

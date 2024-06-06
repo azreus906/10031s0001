@@ -20,3 +20,16 @@ numは、50未満の数字です。
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+int main() {
+    int num = 30;
+
+    if (num < 50) {
+        printf("numは、50未満の数字です。");
+    } else if (num < 80) {
+        printf("numは、50以上80未満の数字です。");
+    } else {
+        printf("numは、80以上の数字です。");
+    }
+}

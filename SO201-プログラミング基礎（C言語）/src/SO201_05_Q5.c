@@ -20,3 +20,13 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+int main() {
+    for (int i = 5; i < 10; i++) {
+        if (i % 2 == 0) {
+            break;
+        }
+    printf("%d\n", i);
+    }
+}

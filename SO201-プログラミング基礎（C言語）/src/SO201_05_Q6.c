@@ -21,3 +21,13 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i < 6; i++) {
+        if (i % 2 != 0) {
+            continue;
+        }
+        printf("%d\n", i);
+    }
+}
