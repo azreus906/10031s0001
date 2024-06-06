@@ -36,8 +36,8 @@ int main() {
     strcpy(user.name, "Tanaka Ichiro");
     user.age = 25;
 
-    printf("%s\n", user.name);
-    printf("%d\n", user.age);
+    printf("user.name = %s\n", user.name);
+    printf("user.age = %d\n", user.age);
 }
 
 
