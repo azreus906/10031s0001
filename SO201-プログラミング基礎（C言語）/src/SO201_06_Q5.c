@@ -20,3 +20,10 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num = 21;
+    printf("%.3f\n", sqrt(num));
+}
