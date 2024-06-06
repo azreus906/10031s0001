@@ -19,3 +19,12 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+int main() {
+    char text[40];
+    printf("何か入力してください。＞");
+    scanf("%s", text);
+
+    printf("入力した文字列は、「%s」です。\n", text);
+}
