@@ -22,3 +22,23 @@ user.age = 25
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+#include <string.h>
+
+struct Tuser {
+    char name[32];
+    int age;
+};
+
+int main() {
+    struct Tuser user;
+
+    strcpy(user.name, "Tanaka Ichiro");
+    user.age = 25;
+
+    printf("%s\n", user.name);
+    printf("%d\n", user.age);
+}
+
+
+
