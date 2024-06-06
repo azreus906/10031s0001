@@ -23,6 +23,6 @@ He said "Hello World!!".
 #include <stdio.h>
 
 int main() {
-    char s[] = "He said \"Hello World!!\"";
+    char s[] = "He said \"Hello World!!\".";
     printf("%s", s);
 }
