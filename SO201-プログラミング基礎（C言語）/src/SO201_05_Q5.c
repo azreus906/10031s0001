@@ -27,6 +27,6 @@ int main() {
         if (i % 2 == 0) {
             break;
         }
-    printf("%d\n", i);
+        printf("%d\n", i);
     }
 }
