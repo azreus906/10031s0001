@@ -20,3 +20,14 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+float plus(float num1, float num2) {
+    float x = num1 + num2;
+    return x;
+}
+
+int main() {
+    float num = plus(7.8, 3.4);
+    printf("%f\n", num);
+}
