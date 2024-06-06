@@ -22,3 +22,11 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+int main() {
+    int a = 11;
+    int b = 3;
+    printf("%d\n", a/b);
+    printf("%d\n", a%b);
+}
