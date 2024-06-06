@@ -20,3 +20,19 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+double plus(double num1, double num2) {
+    double x = num1 + num2;
+    return x;
+}
+
+double minus(double num1, double num2) {
+    double x = num1 - num2;
+    return x;
+}
+
+int main() {
+    double num = minus(7.8, 3.4);
+    printf("%f\n", num);
+}
