@@ -28,7 +28,7 @@ int main() {
     int temp;
 
     for (int i = 0; i < length; i++) {
-        for (int j = 0; j < length; j++) {
+        for (int j = 0; j < (length - 1); j++) {
             if (array[j + 1] < array[j]) {
                 temp =  array[j + 1];
                 array[j + 1] = array[j];
