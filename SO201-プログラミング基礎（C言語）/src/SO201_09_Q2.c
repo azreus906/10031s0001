@@ -43,6 +43,7 @@ FizzBuzz
 // ここより下に解答を記載する。
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 
 int main(int argc, char *argv[]) {
 
