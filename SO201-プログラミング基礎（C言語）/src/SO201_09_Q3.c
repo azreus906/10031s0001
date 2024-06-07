@@ -24,11 +24,11 @@
 
 int main() {
     int array[] = {2, 13, 99, 20, 28, 64, 33, 73, 20, 1, 73};
-    int size = sizeof(array)/sizeof(array[0]);
-    int temp = 0;
+    int length = sizeof(array) / sizeof(array[0]);
+    int temp;
 
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (int i = 0; i < length; i++) {
+        for (int j = 0; j < length; j++) {
             if (array[j + 1] < array[j]) {
                 temp =  array[j + 1];
                 array[j + 1] = array[j];
@@ -37,9 +37,9 @@ int main() {
         }
     }
 
-    for(int i = 0; i < size; i++) {
+    for(int i = 0; i < length; i++) {
         printf("%d", array[i]);
-        if(i < size - 1) {
+        if(i < length - 1) {
             printf(", ");
         }
     }
