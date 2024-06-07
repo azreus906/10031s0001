@@ -41,3 +41,28 @@ FizzBuzz
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+
+    if(argc != 3) {
+        printf("コマンドライン引数が不正です。");
+        return 0;
+    }
+
+    int min = atoi(argv[1]);
+    int max = atoi(argv[2]);
+
+    for (int i = min; i <= max; i++) {
+        if (i % 15 == 0) {
+            printf("FizzBuzz\n");
+        } else if (i % 3 == 0) {
+            printf("Fizz\n");
+        } else if (i % 5 == 0) {
+            printf("Buzz\n");
+        } else {
+            printf("%d\n", i);
+        }
+    }
+}
