@@ -51,8 +51,36 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
+    /* エラーチェックのためにatoi()よりもstrtolを使った方が良い
     int min = atoi(argv[1]);
     int max = atoi(argv[2]);
+    */
+
+    char *endptr;
+    errno = 0;
+
+    long min = strtol(argv[1], &endptr, 10);
+    if (errno != 0) {
+        printf("コマンドライン引数が不正です。");
+        return 0;
+    } else if (endptr == argv[1]) {
+        printf("コマンドライン引数が不正です。");
+        return 0;
+    }
+
+    long max = strtol(argv[2], &endptr, 10);
+    if (errno != 0) {
+        printf("コマンドライン引数が不正です。");
+        return 0;
+    } else if (endptr == argv[2]) {
+        printf("コマンドライン引数が不正です。");
+        return 0;
+    }
+
+    if (min > max) {
+        printf("コマンドライン引数が不正です。");
+        return 0;
+    }
 
     for (int i = min; i <= max; i++) {
         if (i % 15 == 0) {
