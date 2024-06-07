@@ -25,3 +25,20 @@ fedcba
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char *argv[]) {
+
+    if (argc != 2){
+        printf("コマンドライン引数が不正です。\n");
+        return 0;
+    }
+
+    char *str = argv[1];
+    int length = strlen(str);
+
+    for (int i = (length-1); str[i] != '\0'; i--) {
+        printf("%c", str[i]);
+    }
+}
