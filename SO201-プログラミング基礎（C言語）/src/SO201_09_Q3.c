@@ -20,3 +20,27 @@
 
 
 // ここより下に解答を記載する。
+#include <stdio.h>
+
+int main() {
+    int array[] = {2, 13, 99, 20, 28, 64, 33, 73, 20, 1, 73};
+    int size = sizeof(array)/sizeof(array[0]);
+    int temp = 0;
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            if (array[j + 1] < array[j]) {
+                temp =  array[j + 1];
+                array[j + 1] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+
+    for(int i = 0; i < size; i++) {
+        printf("%d", array[i]);
+        if(i < size - 1) {
+            printf(", ");
+        }
+    }
+}
