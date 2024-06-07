@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     char *str = argv[1];
     int length = strlen(str);
 
-    for (int i = (length-1); str[i] != '\0'; i--) {
+    for (int i = (length-1); i >= 0; i--) {
         printf("%c", str[i]);
     }
 }
