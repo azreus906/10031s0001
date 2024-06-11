@@ -1,35 +1,37 @@
 #include <stdio.h>
+
 #define MAX_STRING_VALUE 20
+#define LARGER_PS1 1
+#define LARGER_PS2 -1
+#define EQUAL_PS1_PS2 0
+#define ERROR_VALUE -99
 
 int scmp(char *ps1, char *ps2) {
-    /* retをエラー値で初期化*/
-    int ret = -99;
 
     for(int i = 0; i < MAX_STRING_VALUE; i++) {
         /* s1とs2に文字がまだあるかどうか確認 */
         if(*(ps1 + i) == '\0' && *(ps2 + i) == '\0') {
-            ret = 0;
-            return ret;
+            return EQUAL_PS1_PS2;
         }else if(*(ps1 + i) == '\0') {
-            ret = -1;
-            return ret;
+            return LARGER_PS2;
         }else if(*(ps2 + i) == '\0'){
-            ret = 1;
-            return ret;
+            return LARGER_PS1;
+        }else{
+            continue;
         }
 
         /* 文字の大小比較 */
         if(*(ps1 + i) < *(ps2 + i)) {
-            ret = -1;
-            return ret;
+            return LARGER_PS2;
         }else if(*(ps1 + i) > *(ps2 + i)){
-            ret = 1;
-            return ret;
+            return LARGER_PS1;
         }else{
-            ret = 0;
+            continue;
         }
     }
-    return ret;
+
+    /* for()内で正常にreturnしなかった場合*/
+    return ERROR_VALUE;
 }
 
 int main() {
