@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#define NUMBER_OF_CITY 7
-
 struct  city{
     char name[20];
     int area;
