@@ -6,7 +6,7 @@ int main() {
 
     /* 入力を受け取る(%02dで2文字区切りにする) */
     printf(">>input(yymmdd name)? ");
-    scanf("%02d %02d %02d %s", &yy, &mm, &dd, name);
+    scanf("%02d%02d%02d %s", &yy, &mm, &dd, name);
 
     /* 値を表示 */
     printf("yy --> %02d\n", yy);
