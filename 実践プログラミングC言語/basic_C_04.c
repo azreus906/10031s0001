@@ -7,4 +7,6 @@ int main() {
     x = (double)i / j + (double)j / k + (double)k / i;
 
     printf("%f\n", x);
+
+    return 0;
 }
