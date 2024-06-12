@@ -8,7 +8,7 @@
 #define ERROR_VALUE -99
 
 int scmp(char *ps1, char *ps2) {
-
+    
     int len_ps1 = strlen(ps1); /* ps1の文字列の長さを取得 */
     int len_ps2 = strlen(ps2); /* ps2の文字列の長さを取得 */
 
@@ -21,6 +21,18 @@ int scmp(char *ps1, char *ps2) {
 
     /* ps1とps2の文字の大小比較を行う */
     for(int i = 0; i < MAX_NAME_NUM; i++) {
+
+        /* s1とs2に文字がまだあるかどうか確認 */
+        if(*(ps1 + i) == '\0' && *(ps2 + i) == '\0') {
+            return EQUAL_PS1_PS2;
+        }else if(*(ps1 + i) == '\0') {
+            return LARGER_PS2;
+        }else if(*(ps2 + i) == '\0'){
+            return LARGER_PS1;
+        }else{
+            /* 処理なし */
+        }
+
         /* 文字の大小比較 */
         if(*(ps1 + i) < *(ps2 + i)) {
             return LARGER_PS2;
@@ -40,12 +52,12 @@ void namesort(char *array[], int num) {
     for (int i = 0; i < num - 1; i++) {
         for (int j = 0; j < (num - 1) - i; j++) {
             int ret = scmp(array[j], array[j + 1]);
-            if(ret == 1) {
+            if(ret == LARGER_PS1) {
                 temp = array[j];
                 array[j] = array[j + 1];
                 array[j + 1] = temp;
-            } else if(ret == -99) {
-                printf("Error: 文字の比較でエラーが発生しました");
+            } else if(ret == ERROR_VALUE) {
+                printf("Error: 文字の比較でエラーが発生しました\n");
             } else {
                 /* 処理なし */
             }
