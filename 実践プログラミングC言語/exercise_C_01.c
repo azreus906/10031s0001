@@ -21,6 +21,7 @@ int scmp(char *ps1, char *ps2) {
 
     /* ps1とps2の文字の大小比較を行う */
     for(int i = 0; i < MAX_STRING_VALUE; i++) {
+
         /* s1とs2に文字がまだあるかどうか確認 */
         if(*(ps1 + i) == '\0' && *(ps2 + i) == '\0') {
             return EQUAL_PS1_PS2;
@@ -51,9 +52,9 @@ int main() {
     char s1[MAX_STRING_VALUE], s2[MAX_STRING_VALUE];
 
     /* 値の入力を受け付ける */
-    printf("s1の値を入力してください: ");
+    printf("s1の値を入力してください(最大19文字): ");
     scanf("%s", s1);
-    printf("s2の値を入力してください: ");
+    printf("s2の値を入力してください(最大19文字): ");
     scanf("%s", s2);
 
     /* scmpをcallする */
