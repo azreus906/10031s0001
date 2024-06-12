@@ -78,16 +78,22 @@ int main() {
     /* ファイルを開く */
     fp = fopen(file_name, "rb");
     if (fp == NULL) {
-        perror("Error: ファイルを開けませんでした\n");
+        printf("Error: ファイルを開けませんでした\n");
         return 0;
     }
 
     /* ファイルからデータを読み込む */
     while (fread(buffer[data_count], data_unit, NAME_DATA_SIZE, fp) == NAME_DATA_SIZE) {
 
-        /* データの先頭が空白文字だったら終了 */
-        if (buffer[data_count][0] == ' ') {
+        /* ファイルの1文字目が空白だったら終了 */
+        if (data_count == 0 && buffer[data_count][0] == ' ') {
+            printf("Error: ファイルにデータがありません\n");
             break;
+        }
+        
+        /* データの先頭が空白だったら終了 */
+        if (buffer[data_count][0] == ' ') {
+            break; 
         }
 
         /* bufferの値をname_arrayに入れる */
@@ -100,8 +106,18 @@ int main() {
         }
     }
 
+    /* 読み込み中にエラーが発生していないか確認 */
+    if (ferror(fp)) {
+        printf("Error: ファイル読み込み中にエラーが発生しました\n");
+        fclose(fp);
+        return 0;
+    }
+
     /* ファイルを閉じる */
-    fclose(fp);
+    if (fclose(fp) != 0) {
+        printf("Error: ファイルを正常に閉じることができませんでした\n");
+        return 0;
+    }
 
     /* 読み込んだデータを表示 */
     printf("[並び替え前] \n");
