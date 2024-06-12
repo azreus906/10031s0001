@@ -40,10 +40,14 @@ void namesort(char *array[], int num) {
     for (int i = 0; i < num - 1; i++) {
         for (int j = 0; j < (num - 1) - i; j++) {
             int ret = scmp(array[j], array[j + 1]);
-            if(ret == 1){
+            if(ret == 1) {
                 temp = array[j];
                 array[j] = array[j + 1];
                 array[j + 1] = temp;
+            } else if(ret == -99) {
+                printf("Error: 文字の比較でエラーが発生しました");
+            } else {
+                /* 処理なし */
             }
         }
     }
