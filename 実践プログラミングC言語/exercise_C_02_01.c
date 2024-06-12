@@ -20,7 +20,7 @@ int scmp(char *ps1, char *ps2) {
     }
 
     /* ps1とps2の文字の大小比較を行う */
-    for(int i = 0; i < MAX_NAME_NUM; i++) {
+    for(int i = 0; i < MAX_NAME_NUM + 1; i++) { /* +1は終端文字まで比較するため */
 
         /* s1とs2に文字がまだあるかどうか確認 */
         if(*(ps1 + i) == '\0' && *(ps2 + i) == '\0') {
@@ -48,10 +48,11 @@ int scmp(char *ps1, char *ps2) {
 }
 
 void namesort(char *array[], int num) {
+
     char *temp;
     for (int i = 0; i < num - 1; i++) {
         for (int j = 0; j < (num - 1) - i; j++) {
-            int ret = scmp(array[j], array[j + 1]);
+            int ret = scmp(array[j], array[j + 1]); /* j番目の要素の先頭アドレスとj+1番目の要素の先頭アドレスを渡す */
             if(ret == LARGER_PS1) {
                 temp = array[j];
                 array[j] = array[j + 1];
