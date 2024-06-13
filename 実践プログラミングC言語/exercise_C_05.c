@@ -20,11 +20,9 @@ int main(int argc, char *argv[]) {
     int day = 0;
 
     /* 引数が年,月,日の3つあるか確認 */
-    for (int i = 1; i <= 3; i++) {
-        if (argv[i] == NULL) {
-            printf("Error: 引数がありません\n");
-            return ERROR_VALUE;
-        }
+    if (argc != 4) {
+        printf("Error: 引数がありません\n");
+        return ERROR_VALUE;
     }
 
     /* yearを文字列から数値に変換 */
@@ -98,6 +96,8 @@ int convert_string_to_int(char string[], char type) {
 
 int calc_total_day(int year, int month, int day) {
 
+    const int days[] = {28, 29, 30, 31};
+
     int leap_year = 0; /* 閏年であれば1 */
     int total_day = 0; /* 通算日数 */
 
@@ -109,29 +109,29 @@ int calc_total_day(int year, int month, int day) {
     /* 前の月までの日数を加算 */
     for (int i = 1; i < month; i++) {  
         if (i == 1) {
-            total_day += 31;
+            total_day += days[3];
         } else if (i == 2 && leap_year == 0) {
-            total_day += 28;
+            total_day += days[0];
         } else if (i == 2 && leap_year == 1) {
-            total_day += 29;
+            total_day += days[1];
         } else if (i == 3) {
-            total_day += 31;
+            total_day += days[3];
         } else if (i == 4) {
-            total_day += 30;
+            total_day += days[2];
         } else if (i == 5) {
-            total_day += 31;
+            total_day += days[3];
         } else if (i == 6) {
-            total_day += 30;
+            total_day += days[2];
         } else if (i == 7) {
-            total_day += 31;
+            total_day += days[3];
         } else if (i == 8) {
-            total_day += 31;
+            total_day += days[3];
         } else if (i == 9) {
-            total_day += 30;
+            total_day += days[2];
         } else if (i == 10) {
-            total_day += 30;
+            total_day += days[2];
         } else if (i == 11) {
-            total_day += 31;
+            total_day += days[3];
         }else{
             printf("Error: 通算日の計算でエラーが発生しました\n");
             return ERROR_VALUE;
