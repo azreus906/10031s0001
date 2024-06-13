@@ -96,7 +96,8 @@ int convert_string_to_int(char string[], char type) {
 
 int calc_total_day(int year, int month, int day) {
 
-    const int days[] = {28, 29, 30, 31};
+    const int non_leap_year_days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    const int leap_year_days[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     int leap_year = 0; /* 閏年であれば1 */
     int total_day = 0; /* 通算日数 */
@@ -107,34 +108,11 @@ int calc_total_day(int year, int month, int day) {
     }
     
     /* 前の月までの日数を加算 */
-    for (int i = 1; i < month; i++) {  
-        if (i == 1) {
-            total_day += days[3];
-        } else if (i == 2 && leap_year == 0) {
-            total_day += days[0];
-        } else if (i == 2 && leap_year == 1) {
-            total_day += days[1];
-        } else if (i == 3) {
-            total_day += days[3];
-        } else if (i == 4) {
-            total_day += days[2];
-        } else if (i == 5) {
-            total_day += days[3];
-        } else if (i == 6) {
-            total_day += days[2];
-        } else if (i == 7) {
-            total_day += days[3];
-        } else if (i == 8) {
-            total_day += days[3];
-        } else if (i == 9) {
-            total_day += days[2];
-        } else if (i == 10) {
-            total_day += days[2];
-        } else if (i == 11) {
-            total_day += days[3];
-        }else{
-            printf("Error: 通算日の計算でエラーが発生しました\n");
-            return ERROR_VALUE;
+    for (int i = 0; i < month - 1; i++) {  
+        if (leap_year == 0) {
+            total_day += non_leap_year_days[i];
+        } else {
+            total_day += leap_year_days[i];
         }
     }
 
