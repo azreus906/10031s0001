@@ -35,6 +35,8 @@ int main() {
         double approx_val = maclaurin_sin(x, n);
         double difference = sin_val - approx_val;
         
+        /* 最大値のx=50,N=50でも小数点位置が揃うように表示形式を指定 */
+        /* 整数部分が25桁以内であれば小数点位置が揃うように%30.5fとした */
         printf("%d: \t\t %30.5f \t\t %30.5f \t\t %30.5f \n", n, sin_val, approx_val, difference);
     }
     
