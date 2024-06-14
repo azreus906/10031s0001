@@ -19,7 +19,7 @@
 #define MAX_HEIGHT_VALUE 200
 
 int insertRecord(char *); /* レコードの挿入と並び替えを行う関数 */
-int scmp(char *, char *);
+int scmp(char *, char *); /* 文字列の順序比較を行う関数 */
 int searchRecord(char *); /* レコードの検索を行う関数 */
 int displayRecord(char *); /* レコードの表示を行う関数 */
 
@@ -47,10 +47,11 @@ int main(int argc, char *argv[]) {
     while(command != 'e'){
 
         int ret; /* 各関数からの戻り値 */
+
         printf("\n============================================= \n");
         printf("Input command \n");
         printf(" i(:insert) s(:search) d(:display) e(:end) \n");
-        scanf("%c", &command);
+        scanf(" %c", &command);
 
         switch (command) {
             case 'i':
@@ -85,14 +86,12 @@ int main(int argc, char *argv[]) {
                 break;
             case 'e':
                 printf("プログラムを終了します。\n");
-                break;
+                return 0;
             default:
                 printf("Error: コマンドの値が不正です。\n");
                 break;
         }
     }
-
-    return 0;
 }
 
 int insertRecord(char *filename) {
@@ -143,7 +142,7 @@ int insertRecord(char *filename) {
     int incerted = 0; /* 新規レコードが挿入済みかどうかを判断するフラグ */
     
     while(!feof(fp)) {
-        
+
          /* 入力ファイルからデータを読み込む */
         fscanf(fp, "%s %d %f %f", person.name, &person.age, &person.weight, &person.height);
         
