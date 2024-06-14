@@ -5,13 +5,26 @@
 #define MAX_FILENAME_LENGTH 20
 #define CORRECT_VALUE 1
 #define ERROR_VALUE -1
+#define LARGER_PS1 1
+#define LARGER_PS2 -1
+#define EQUAL_PS1_PS2 0
+
+#define MIN_NAME_LENGTH 1
+#define MAX_NAME_LENGTH 20
+#define MIN_AGE_VALUE 0
+#define MAX_AGE_VALUE 100
+#define MIN_WEIGHT_VALUE 1
+#define MAX_WEIGHT_VALUE 200
+#define MIN_HEIGHT_VALUE 1
+#define MAX_HEIGHT_VALUE 200
 
 int insertRecord(char *); /* レコードの挿入と並び替えを行う関数 */
+int scmp(char *, char *);
 int searchRecord(char *); /* レコードの検索を行う関数 */
 int displayRecord(char *); /* レコードの表示を行う関数 */
 
 struct Person {
-    char name[20];
+    char name[MAX_FILENAME_LENGTH];
     int age;
     float weight;
     float height;
@@ -75,8 +88,8 @@ int main(int argc, char *argv[]) {
                 break;
             default:
                 printf("Error: コマンドの値が不正です。\n");
+                break;
         }
-
     }
 
     return 0;
@@ -87,7 +100,7 @@ int insertRecord(char *filename) {
     FILE *fp;
 
     /* ファイルを開く */
-    fp = fopen(filename, "a");
+    fp = fopen(filename, "r");
     if (fp == NULL) {
         printf("Error: ファイルを正常に開けませんでした。\n");
         return ERROR_VALUE;
@@ -104,17 +117,105 @@ int insertRecord(char *filename) {
     printf("Enter height: ");
     scanf("%f", &new_person.height);
 
-    /* 新規レコードをファイルに書き込む */
-    int write_result = fprintf(fp, "\n %s %d %.1f %.1f", new_person.name, new_person.age, new_person.weight, new_person.height);
-
-    /* 書き込み処理でエラーが発生した場合 */
-    if (write_result < 0) {
-        printf("Error: 出力ファイルへの書き込みでエラーが発生しました。\n");
-        fclose(fp);
+    /* new_person.nameのチェック */
+    if (strlen(new_person.name) < MIN_NAME_LENGTH || strlen(new_person.name) > MAX_NAME_LENGTH) {
+        printf("Error: 新規レコードの名称(name)が不正です。\n");
+        return ERROR_VALUE;
+    }
+    /* new_person.ageのチェック */
+    if (new_person.age < MIN_AGE_VALUE || new_person.age > MAX_AGE_VALUE) {
+        printf("Error: 新規レコードの年齢(age)の値が不正です。\n");
+        return ERROR_VALUE;
+    }
+    /* new_person.weightのチェック */
+    if (new_person.age < MIN_WEIGHT_VALUE || new_person.age > MAX_WEIGHT_VALUE) {
+        printf("Error: 新規レコードの体重(weight)の値が不正です。\n");
+        return ERROR_VALUE;
+    }
+    /* new_person.heightのチェック */
+    if (new_person.age < MIN_HEIGHT_VALUE || new_person.age > MAX_HEIGHT_VALUE) {
+        printf("Error: 新規レコードの身長(height)の値が不正です。\n");
         return ERROR_VALUE;
     }
 
+    struct Person person;
+    FILE *tmp_fp = fopen("tmp.txt", "w"); /* tmpファイルtmp.txtを作成する */
+    int incerted = 0; /* 新規レコードが挿入済みかどうかを判断するフラグ */
+    
+    while(!feof(fp)) {
+        
+         /* 入力ファイルからデータを読み込む */
+        fscanf(fp, "%s %d %f %f", person.name, &person.age, &person.weight, &person.height);
+        
+        /* 名前を比較する */
+        int ret = scmp(new_person.name, person.name);
+
+        if (incerted == 1) { /* 既に挿入済みの場合は既存のレコードを登録する */
+            fprintf(tmp_fp, "%s %d %.1f %.1f \n", person.name, person.age, person.weight, person.height);
+        } else if (ret == LARGER_PS1) { /* 既存の名前の方が辞書順で前の場合 */
+            fprintf(tmp_fp, "%s %d %.1f %.1f \n", person.name, person.age, person.weight, person.height);
+        } else if (ret == LARGER_PS2) { /* 新規の名前の方が辞書順で前の場合 */
+            fprintf(tmp_fp, "%s %d %.1f %.1f \n", new_person.name, new_person.age, new_person.weight, new_person.height);
+            fprintf(tmp_fp, "%s %d %.1f %.1f \n", person.name, person.age, person.weight, person.height);
+            incerted = 1; /* 挿入済みフラグを1にする */
+        } else {
+            printf("Error: scmp()の処理でErrorが発生しました。ret: %d \n", ret);
+        }
+    }
+
+    /* 最後までレコードが挿入されなかった場合はファイルの最後尾に追加する */
+    if (incerted == 0) {
+        fprintf(tmp_fp, "%s %d %.1f %.1f", new_person.name, new_person.age, new_person.weight, new_person.height);
+    }
+
+    fclose(fp);
+    fclose(tmp_fp);
+
+    /* オリジナルのファイルを削除し，tmp.txtの名称を変更する */
+    remove(filename);
+    rename("tmp.txt", filename);
+
     return CORRECT_VALUE;
+}
+
+int scmp(char *ps1, char *ps2) {
+
+    int len_ps1 = strlen(ps1); /* ps1の文字列の長さを取得 */
+    int len_ps2 = strlen(ps2); /* ps2の文字列の長さを取得 */
+
+    /* ps1またはps2が不正な値だった場合はERROR_VALUEでreturnする*/
+    if(ps1 == NULL || ps2 == NULL) {
+        return ERROR_VALUE;
+    } else if(len_ps1 <= 0 || len_ps2 <= 0 || len_ps1 > MAX_NAME_LENGTH || len_ps2 > MAX_NAME_LENGTH) {
+        return ERROR_VALUE;
+    }
+
+    /* ps1とps2の文字の大小比較を行う */
+    for(int i = 0; i < MAX_NAME_LENGTH; i++) {
+
+        /* s1とs2に文字がまだあるかどうか確認 */
+        if(*(ps1 + i) == '\0' && *(ps2 + i) == '\0') {
+            return EQUAL_PS1_PS2;
+        }else if(*(ps1 + i) == '\0') {
+            return LARGER_PS2;
+        }else if(*(ps2 + i) == '\0'){
+            return LARGER_PS1;
+        }else{
+            /* 処理なし */
+        }
+
+        /* 文字の大小比較 */
+        if(*(ps1 + i) < *(ps2 + i)) {
+            return LARGER_PS2;
+        }else if(*(ps1 + i) > *(ps2 + i)){
+            return LARGER_PS1;
+        }else{
+            /* 処理なし */
+        }
+    }
+
+    /* for()内で正常にreturnしなかった場合 */
+    return ERROR_VALUE;
 }
 
 int searchRecord(char *filename) {
