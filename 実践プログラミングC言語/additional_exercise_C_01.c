@@ -29,13 +29,13 @@ int main() {
     }
     
     /* 各項数についての近似値と比較を表示 */
-    printf("項数n: \t\t sin(x) \t\t マクローリン近似値 \t\t sin(x) - 近似値 \n");
+    printf("項数n: \t\t\t\t\t sin(x) \t\t\t\t マクローリン近似値 \t\t\t\t sin(x) - 近似値 \n");
     for (int n = 1; n <= N; n++) {
         double sin_val = sin(x);
         double approx_val = maclaurin_sin(x, n);
         double difference = sin_val - approx_val;
         
-        printf("%d: \t\t %-10.5f \t\t %-10.5f \t\t %-10.5f \n", n, sin_val, approx_val, difference);
+        printf("%d: \t\t %30.5f \t\t %30.5f \t\t %30.5f \n", n, sin_val, approx_val, difference);
     }
     
     return 0;
