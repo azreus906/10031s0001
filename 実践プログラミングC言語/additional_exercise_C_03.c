@@ -158,7 +158,7 @@ int insertRecord(char *filename) {
             fprintf(tmp_fp, "%s %d %.1f %.1f \n", person.name, person.age, person.weight, person.height);
             incerted = 1; /* 挿入済みフラグを1にする */
         } else {
-            printf("Error: scmp()の処理でErrorが発生しました。ret: %d \n", ret);
+            printf("Error: scmp()の処理でErrorが発生しました。ret: %d \n", ret); /* scmp()でErrorが発生した場合 */
         }
     }
 
