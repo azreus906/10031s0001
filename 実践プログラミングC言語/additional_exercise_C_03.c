@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
         printf("\n============================================= \n");
         printf("Input command \n");
         printf(" i(:insert) s(:search) d(:display) e(:end) \n");
-        scanf(" %c", &command);
+            
 
         switch (command) {
             case 'i':
