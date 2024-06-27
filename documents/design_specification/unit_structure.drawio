@@ -1,0 +1,124 @@
+<mxfile host="65bd71144e" scale="5" border="0">
+    <diagram id="38AakNMObbIR7WnRwfNq" name="Page-1">
+        <mxGraphModel dx="1631" dy="926" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font face=&quot;century&quot;&gt;comet&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font face=&quot;century&quot;&gt;COMET&lt;/font&gt;&lt;font face=&quot;MS 明朝&quot;&gt;シミュレータメイン&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="40" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;cm_pchk&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;起動パラメータ&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;解読処理&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="40" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;cm_tbad&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;仮想メモリ取得処理&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="120" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;cm_efrd&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;実行可能ファイル&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;読み込み&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="200" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;cm_run&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;オブジェクトコード&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;実行処理&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="280" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;cm_ld&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;LD命令&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="280" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="endArrow=none;html=1;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="180" y="80" as="sourcePoint"/>
+                        <mxPoint x="230" y="30" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="" style="endArrow=none;html=1;fontColor=#000000;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="200" y="310" as="sourcePoint"/>
+                        <mxPoint x="200" y="70" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="" style="endArrow=none;html=1;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="4">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="200" y="150" as="sourcePoint"/>
+                        <mxPoint x="230" y="220" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="" style="endArrow=none;html=1;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="5">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="200" y="230" as="sourcePoint"/>
+                        <mxPoint x="230" y="220" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="" style="endArrow=none;html=1;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="6">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="200" y="310" as="sourcePoint"/>
+                        <mxPoint x="230" y="310" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="" style="endArrow=none;html=1;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="6" target="7">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="180" y="270" as="sourcePoint"/>
+                        <mxPoint x="230" y="220" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;cm_st&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;ST命令&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="350" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;cm_adda&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;ADDA命令&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="420" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="endArrow=none;html=1;fontColor=#000000;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="730" as="sourcePoint"/>
+                        <mxPoint x="390" y="310" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;cm_sll&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;SLL命令&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="490" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;cm_exit&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;century&quot;&gt;EXIT命令&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="560" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;font face=&quot;century&quot;&gt;cm_trls&lt;br&gt;トレースリスト表示&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="630" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;font face=&quot;century&quot;&gt;cm_erhd&lt;br&gt;エラー処理&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="700" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="endArrow=none;html=1;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="16">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="380" as="sourcePoint"/>
+                        <mxPoint x="390" y="200" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="" style="endArrow=none;html=1;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="17">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="450" as="sourcePoint"/>
+                        <mxPoint x="420" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="" style="endArrow=none;html=1;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="19">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="520" as="sourcePoint"/>
+                        <mxPoint x="390" y="540" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="" style="endArrow=none;html=1;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="20">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="590" as="sourcePoint"/>
+                        <mxPoint x="390" y="660" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="" style="endArrow=none;html=1;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="21">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="660" as="sourcePoint"/>
+                        <mxPoint x="390" y="660" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="" style="endArrow=none;html=1;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="23">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="390" y="730" as="sourcePoint"/>
+                        <mxPoint x="390" y="660" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
